@@ -9,15 +9,7 @@
     <button type="submit">Get Info</button>
   </form>
 
-  <script>
-    const electron = require('electron');
-    const { ipcRenderer } = electron;
+  <h1 id="result"></h1>
 
-    document.querySelector('form').addEventListener('submit', (event) => {
-      event.preventDefault();
-
-      const { path } = document.querySelector('input').files[0];
-      ipcRenderer.send('video:submit', path);
-    });
-  </script>
+  <script src="./renderer.js"></script>
 </body>
